@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   #here defining a route other than the default one..
-  root 'welcom#index'
+  root 'welcome#index'
 end

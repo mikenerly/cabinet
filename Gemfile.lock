@@ -62,6 +62,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.9.3)
       msgpack (~> 1.0)
@@ -81,9 +82,18 @@ GEM
     debug (1.4.0)
       irb (>= 1.3.6)
       reline (>= 0.2.7)
+    devise (4.8.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     erubi (1.10.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    haml (5.2.2)
+      temple (>= 0.8.0)
+      tilt
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.0.1)
@@ -109,6 +119,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.12.5-x64-mingw32)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     public_suffix (4.0.6)
     puma (5.5.2)
       nio4r (~> 2.0)
@@ -146,12 +157,18 @@ GEM
     regexp_parser (2.2.0)
     reline (0.3.0)
       io-console (~> 0.5)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rexml (3.2.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.1.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -162,7 +179,9 @@ GEM
     sqlite3 (1.4.2)
     stimulus-rails (1.0.2)
       railties (>= 6.0.0)
+    temple (0.8.2)
     thor (1.1.0)
+    tilt (2.0.10)
     turbo-rails (1.0.0)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
@@ -170,6 +189,8 @@ GEM
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2021.5)
       tzinfo (>= 1.0.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -193,11 +214,14 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  devise (~> 4.8, >= 4.8.1)
+  haml (~> 5.2, >= 5.2.2)
   importmap-rails
   jbuilder
   puma (~> 5.0)
   rails (~> 7.0.0)
   selenium-webdriver
+  simple_form (~> 5.1)
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
