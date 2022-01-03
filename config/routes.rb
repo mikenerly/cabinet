@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   #here defining a route other than the default one..
   root 'welcome#index'
+  #We will create "resources", this will create all the routes for different
+  #actions that will be adding to our application
+  resources :docs
+
 end
