@@ -25,14 +25,23 @@ class DocsController < ApplicationController
             render 'new'
         end
     end
-
+#edit is just responsible for the view file (edit.html.haml)
     def edit
     end
 
     def update
+        #if the document is updated, them save it and redirected us to the doc page
+        #else render the edit page
+        if @doc.update(doc_params)
+            redirect_to @doc
+        else
+            render 'edit'
+        end
     end
 
     def destroy
+        @doc.destroy
+        redirect_to docs_path
     end
 
     private

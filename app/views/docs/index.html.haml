@@ -4,4 +4,6 @@
   %h1= link_to doc.title, doc
   %p= time_ago_in_words (doc.created_at)
   %p= truncate(doc.content, length:50)
+
+  = link_to "Create new", new_doc_path
    

@@ -1,2 +1,6 @@
 %h1= @doc.title
 %p= @doc.content
+<!--Add some link to edit and update/-->
+= link_to "All Docs", docs_path 
+= link_to "Fix Doc", edit_doc_path(@doc)
+= link_to "Trash it", doc_path(@doc), method: :delete, data: { confirm: "Are you sure?" }
